@@ -5,6 +5,62 @@ block content
     h1= title
     p Bootstrap funcionando! #{title}
     p= respuesta
+
+    .container
+      .row
+        .col-xs-12
+          .input-group
+            input.form-control(type='text', placeholder='Ingrese su ubicacion', aria-label='Origen')
+            span.input-group-btn
+              button.btn.btn-secondary(type='button') Aca estoy!
+      .row
+        .col-xs-4       
+          button.btn.btn-info(type='button') Detectar donde estoy
+      
+        .col-xs-4       
+          button.btn.btn-info(type='button') Marcar en mapa
+      .row
+        .col-xs-12  
+          .input-group
+            input.form-control(type='text', placeholder='Ingrese adonde se dirige', aria-label='Destino')
+            span.input-group-btn
+              button.btn.btn-secondary(type='button') Alla voy!
+      .row
+        .col-xs-3
+          .form-group
+            #datetimepicker3.input-group.date
+              input.form-control(type='text')
+              span.input-group-addon
+                span.glyphicon.glyphicon-time
+        
+        .col-xs-3
+          .form-group
+            #datetimepicker3.input-group.date
+              input.form-control(type='text')
+              span.input-group-addon
+                span.glyphicon.glyphicon-time
+        
+      .row
+        .col-sm-4
+          button.btn.btn-primary Buscar Servicios
+    .container
+      .row
+        .col-sm-4  
+          button.btn.btn-primary(type="button", data-toggle="collapse", data-target="#mapa", aria-expanded="false", aria-controls="mapa") Ver/Ocultar mapa
+
+      div.collapse#mapa
+      script.
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('mapa'), {
+          center: {lat: -34.603889, lng: -58.382333},
+          zoom: 15
+          });
+        } 
+        
+      script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpI1dm4HaiIrP5v4B9SNtQ6xdJxNlhwWs&v=3&callback=initMap")
+              
+
     script.
       
     // script(src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js")
