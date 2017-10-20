@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container.text-center
+    h1= title
+    p Bootstrap funcionando! #{title}
+    p= respuesta
+    script.
+      
+    // script(src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js")
+    //script.
+    //Initialize Firebase
+      var config = {
+      apiKey: "AIzaSyBSjYrkYrMh77Z7I7VaTGJMcbZKjfaS1Ew",
+      authDomain: "probacombi.firebaseapp.com",
+      databaseURL: "https://probacombi.firebaseio.com",
+      projectId: "probacombi",
+      storageBucket: "probacombi.appspot.com",
+      messagingSenderId: "243570433456"
+      };
+      firebase.initializeApp(config);
+
